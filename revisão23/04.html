@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            display: grid;
+            grid-template-areas: 
+            "cabeçario menup"
+            "main main"
+            "rodape teste"
+            ;
+            height: 100lvh;
+        }
+        .box{border: 1px solid black;
+        }
+        #box1{background-color: red;
+            grid-area: cabeçario;
+        
+        }
+        #box2{background-color: yellow;
+        grid-area: rodape;}
+        #box3{background-color: green;
+            grid-area: main;
+        }
+        #box4{background-color: rgb(199, 15, 15);
+            grid-area: teste;
+        }
+        #box5{background-color: rgb(120, 2, 255);
+            grid-area: menup;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <div class="box" id="box4">box4</div>
+    <div class="box" id="box5">box5</div>
+
+</body>
+</html>
