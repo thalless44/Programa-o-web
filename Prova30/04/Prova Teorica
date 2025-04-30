@@ -1,0 +1,5 @@
+Resposta 1;
+Resposta 2;
+ HTML não é uma liguagem de programação e sim de marcação usada para estruturar um conteúdo web.  
+Resposta 3;
+o estilo css é composto por um seletor e um bloco de declarações. O seletor indica quem deve ser alterado e o bloco de declaração nos indicamos os "paramentos" que esse seletor vai ter. No seletor para chamarmos algo em html na regra usamos css id(.seuID), class(#suaclasse), hover(:hover)...(não lembro o resto). No bloco cada declaração, é composta por valor separados por dois pontos ":" e terminados por ponto e vírgula ";"
