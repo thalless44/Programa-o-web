@@ -1,27 +1,111 @@
+<!-- 
+    Resposta 1;
+
+    Resposta 2;
+ HTML não é uma liguagem de programação e sim de marcação usada para estruturar um conteúdo web. 
+
+    Resposta 3;
+o estilo css é composto por um seletor e um bloco de declarações. O seletor indica quem deve ser alterado e o bloco de declaração indica os "paramentos" que esse seletor vai ter. No seletor para chamarmos algo em html  usamos id(.seuID), class(#suaclasse), hover(:hover)...(não lembro o resto). No bloco cada declaração, é composta por valor separados por dois pontos ":" e terminados por ponto e vírgula ";"-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
-        .box{
+        .box1{
             border: 1px solid black;
+            display: flex;
             height: 100vh;
             width: 100vh;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+
         }
-        .Bandeira1{
+        .box2{
+            border: 1px solid black;
+            display: flex;
+            height: 100vh;
+            width: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .box3{
+            border: 1px solid black;
+            display: flex;
+            height: 100vh;
+            width: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+        }
+        .bola{
+            border-radius: 80vh;
+            background-color: rgb(255, 0, 0);
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #circulo{
+            display: flex;
+            flex-direction: row;
+        }
+        .cartaz1{
+            background-color: rgb(255, 0, 0);
+            height: 100px;
+            width: 100vh;
+
+        }
+        .cartaz2{
+            background-color: white(255, 255, 255);
+            height: 100px;
+            width: 100vh;
+
+        }
+        .cartaz3{
+            background-color: rgb(0, 47, 255);
+            height: 100px;
+            width: 100vh;
+        }
+        .cartaz4{
+            background-color: rgb(48, 126, 2);
+            height: 300px;
+            width: 100vh;
+        }
+        .cartaz5{
+            height: 300px;
+            width: 100vh;
+        }
+        .cartaz6{
+            background-color: rgb(255, 0, 0);
+            height: 300px;
+            width: 100vh;
             
         }
+        
+
     </style>
 
 </head>
 <body>
     <div id="box" class="box1">
         <div id="Bandeira1" class="box1">
-            <div id="circulo" class="bola"></div>
+            <div id="circul" class="bola"></div>
         </div>
-        <div id="Bandeira2" class="box1"></div>
-        <div id="Bandeira3" class="box1"></div>
+        <div id="Bandeira2" class="box2">
+            <div id="circulo" class="cartaz1"></div>
+            <div id="circulo" class="cartaz2"></div>
+            <div id="circulo" class="cartaz3"></div>
+        </div>
+        <div id="Bandeira3" class="box3">
+            <div id="circulo" class="cartaz4"></div>
+            <div id="circulo" class="cartaz5"></div>
+            <div id="circulo" class="cartaz6"></div>
+        </div>
     </div>
     
 </body>
