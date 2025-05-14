@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .corpo {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+            flex-direction: column;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            height: 20px;
+            width: 90vh;
+        }
+
+        .menuItem {
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menuItem:hover {
+            background-color: aqua;
+        }
+
+        .pesquisa {
+            background-color: #6ecff6;
+            border: 2px solid black;
+            border-radius: 15px;
+            margin-left: 25px;
+            height: 250px;
+            width: 95%;
+        }
+
+        .textoPesquisaFiltrada {
+            display: grid;
+            height: 40px;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .labelPesquisa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .textoCodigo {
+            display: flex;
+            height: 20px;
+            width: 600px;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .digita {
+            display: flex;
+            border: 1px solid white;
+            background-color: white;
+            width: 200px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .pesquisaGrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-left: 40px;
+        }
+
+        .bloc {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .bloc p{
+            margin: 1px;
+        }
+
+        .caixa {
+            width: 200px;
+            height: 20px;
+            background-color: white;
+            border-radius: 4px;
+            justify-content: center;
+        }
+
+        .botao{
+            margin-top: 30px;
+            width: 200px;
+            height: 20px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            background-color: #eee;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .botao:hover {
+            background-color: white;
+        }
+
+        .casas {
+            background-color: #6ecff6;
+            border: 2px solid black;
+            border-radius: 15px;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 350px;
+           
+        }
+
+        .card {
+            background-color: #d3d3d3;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            height: 320px;
+            width: 250px;
+            margin: 20px;
+        }
+        .card p {
+            margin: 1px;
+        }
+
+        .image{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <div class="menu">
+            <div class="menuItem"><p>Configurações</p></div>
+            <div class="menuItem"><p>Cadastro</p></div>
+            <div class="menuItem"><p>Relatório</p></div>
+            <div class="menuItem"><p>Planilhas</p></div>
+            <div class="menuItem"><p>Sair</p></div>
+        </div>
+
+        <div class="pesquisa">
+            <div class="textoPesquisaFiltrada">
+                <div class="labelPesquisa" ><h2>Pesquisa filtrada</h2></div>
+                <div class="textoCodigo" ><h4>cod. do imóvel:</h4></div>
+                <div class="digita"></div>
+            </div>
+
+            <div class="pesquisaGrid">
+                <div class="bloc"><p>Área (m²)</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Vagas de Garagem</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Sistema de Segurança</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Rua</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Quartos</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Mobiliada</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Piscina</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Número da Casa</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Banheiros</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Jardim</p><div class="caixa"> </div></div>
+                <div class="bloc"><p>Cidade</p><div class="caixa"> </div></div>
+                <div class="botao">Pesquisar</div>
+            </div>
+        </div>
+
+        <div class="casas">
+            <div class="card">
+                <div class="image"></div>
+                <p>Cód. do Imóvel:</p>
+                <p>Valor:</p>
+                <p>Disponibilidade:</p>
+                <p>Data de cadastro:</p>
+                <p>Informações do imóvel:</p>
+            </div>
+            <div class="card">
+                <div class="image"></div>
+                <p>Cód. do Imóvel:</p>
+                <p>Valor:</p>
+                <p>Disponibilidade:</p>
+                <p>Data de cadastro:</p>
+                <p>Informações do imóvel:</p>
+            </div>
+            <div class="card">
+                <div class="image"></div>
+                <p>Cód. do Imóvel:</p>
+                <p>Valor:</p>
+                <p>Disponibilidade:</p>
+                <p>Data de cadastro:</p>
+                <p>Informações do imóvel:</p>
+            </div>
+            <div class="card">
+                <div class="image"></div>
+                <p>Cód. do Imóvel:</p>
+                <p>Valor:</p>
+                <p>Disponibilidade:</p>
+                <p>Data de cadastro:</p>
+                <p>Informações do imóvel:</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

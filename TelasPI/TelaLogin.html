@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        body {
+            
+            background-color:  #6ec4e9;
+        }
+
+        .corpo {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tela-login {
+            background-color:  #d9d9d9;
+            padding: 40px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            width: 90%;
+        }
+        .campo p {
+            font-size: 12px;
+            color: #444;
+            margin: 1px;
+        }
+
+        .campoBranco{
+            height: 30px;
+            background-color: white;
+        }
+
+
+        .botao-login {
+            width: 30%;
+            height: 35px;
+            background-color: #7eb97b;
+            color: rgba(0, 0, 0, 0.76);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .botao-login:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <div class="tela-login">
+            <h1>LOGIN</h1>
+            <div class="campo">
+                <p>Email</p>
+                <div class="campoBranco"></div>
+            </div>
+            <div class="campo">
+                <p>Senha</p>
+                <div class="campoBranco"></div>
+                <p>Recuperar senha ?</p>
+            </div>
+            <div class="botao-login">Efetuar login</div>
+        </div>
+    </div>
+</body>
+</html>
