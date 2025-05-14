@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório de Vendas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #6ecff6;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .relatorio {
+      background-color: #d3d3d3;
+      padding: 30px;
+      border-radius: 10px;
+      width: 800px;
+    }
+
+    .relatorio h1 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .tabela {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      border: 1px solid #00a3d9;
+      background-color: white;
+    }
+
+    .dado{
+      background-color: #f2f2f2;
+      font-weight: bold;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mesagenVazia {
+      color: #333;
+      font-style: italic;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-column: span 4;
+      height: 400px;
+      
+    }
+
+    .botoes {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .botao-sair {
+      background-color: #bdbdbd;
+      border: none;
+      padding: 10px 30px;
+      font-weight: bold;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .botao-sair:hover {
+      background-color: #a9a9a9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="relatorio">
+      <h1>RELATÓRIO DE VENDAS DOS IMÓVEIS</h1>
+      <div class="tabela">
+        <div class="dado">ID Imóvel</div>
+        <div class="dado">Cidade</div>
+        <div class="dado">Data de cadastro</div>
+        <div class="dado">Valor</div>
+        <div class="mesagenVazia">Não há conteúdo na tabela</div>
+      </div>
+      <div class="botoes">
+        <button class="botao-sair">SAIR</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
