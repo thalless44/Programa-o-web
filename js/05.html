@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Numero Aleatório</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+    <h1>Numero Aleatório</h1>
+
+    <label for="valormin"> Valor Minimo</label>
+    <input id="valormin" type="number">
+
+    <label for="valormax"> Valor Maximo</label>
+    <input id="valormax" type="number">
+
+    <button id="button">Clique em mim </button>
+    <p id="nrand">🚩​🚩​🚩​🚩​🚩​🚩​🚩​🚩​</p>
+
+    <script>
+        let min = document.querySelector("#valormin")
+        let max = document.querySelector("#valormax")
+
+        let mybutton = document.querySelector("#button")
+        mybutton.addEventListener("click" , () => {
+
+            let minimo = Number(min.value)
+
+        let delta = Number(max.value) - Number(min.value)
+        let i = Math.trunc( (Math.random() * delta)+ minimo)
+        let p = document.createElement("p")
+        p.innerHTML = "numero aleatorio; " + i
+        document.body.appendChild(p)
+
+
+        })
+
+     
+    </script>
+
+</body>
+</html>

@@ -15,14 +15,16 @@
 </style>
 </head>
 <body>
+    <h1>Numero Aleatorio</h1>
     <button id="button"> clica em mim</button>
     <script>
         let button=document.querySelector("#button");
-        let i = 0
         button.addEventListener("click", ()=>{
+            let i = math.trunc(Math.random()*100)
+        
+
+            button.innerHTML= i;
             
-            button.innerHTML=i;
-            i++
         })
     </script>
     

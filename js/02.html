@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        li{
+            height: 100px;
+            width: 100px;
+            flex-grow: 0;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -14,8 +25,8 @@
 
         /*Adicione um elemneto de lestagem ao body e adicione cada numero, de contagem, a um item <li>*/ 
             let lista =document.createElement("ul")
-            lista.style.display ="flex"
-            
+            lista.style.display ="flex";
+            lista.style.flexWrap ="Wrap";
             document.body.appendChild(lista)
             for (i=0; i<n1; i++){
                 item=document.createElement("li")
@@ -24,12 +35,13 @@
                 lista.appendChild(item);
                 if(i%2 ==0 ){
                 item.style.backgroundColor ="#FF0000";
+                /* altere a cor de fundo para vermelho, dos items contendo numeros pares*/ 
             }
             }
 
 
 
-        /* altere a cor de fundo para vermelho, dos items contendo numeros pares*/ 
+        
             
     
     </script>
