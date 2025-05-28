@@ -14,11 +14,17 @@
 </head>
 <body>
     <h1 id="Titulo">O que é JavaScript?</h1>
-    <p id="Paragrafo">JavaScript foi proposto para que os scripts pudessem ser executados do lado do cliente e interagissem com o usuário sem a necessidade deste script ser compilado</p>
+    <p id="Paragrafo"> O JavaScript foi criado para tornar as páginas web interativas executando scripts no navegador. No navegador, ele roda em um ambiente chamado sandbox que limita seu acesso ao sistema, já nom servidor ele tem acesso ilimitado ao sistema e varias funcionalidades como acesso ao banco de dados arquivos do sistema entre outros. Objetos globais como document, console e alert permitem interagir com a página, document ele aponta para o dom  registrar mensagens e exibir alertas.</p>
+    <p id=" hora">Hora atual <span id="time"></span></p>
     <script>
          console.log("oiiiiiiiiiii");
          alert("aaaaaaaaaaaaa");
-         document.getElementById().innerHTML
+         const currentTime = new Date().toLocaleTimeString();
+        document.getElementById("time").innerHTML = currentTime;
+
+        //Amaxenando no local storage
+        localStorage  
+
     </script>
 </body>
 </html>
