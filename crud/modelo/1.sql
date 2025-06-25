@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS usuarios{
     senha varchar(200)
 }
 
-CREATE TABLE IF NOT EXISTS produto{
+CREATE TABLE IF NOT EXISTS produtos{
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome varchar(200),
     valor decimal(2,2)
