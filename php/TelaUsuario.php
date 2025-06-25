@@ -1,5 +1,5 @@
 <form action="Usuario_listar.php" method="GET">
-    <h1>COlOQUE SEUS DADOS</h1>
+    <h1>COLOQUE SEUS DADOS</h1>
 
     <label for="inputnome">Nome</label>
     <input type="text" id="inputnome" name = "nome" placeholder ="insira seu nome" >
