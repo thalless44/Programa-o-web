@@ -22,7 +22,10 @@ class UsuarioDAO{
         $registro = $stmt -> fetch();
         $usr =new Usuario($registro["nome"], $registro["email"], $registro["senha"]);
         $usr -> id=$registro["id"];
-        return $registro;
+
+       // echo var_dump($registro);
+
+        return $usr;
     }
     public function lista_todos(){
         $sql = "SELECT * FROM usuarios " ;
@@ -37,6 +40,15 @@ class UsuarioDAO{
             array_push($usuarios, $usr);
         }
         return $usuarios;
+
+    }
+
+    public function autenticar($email, $senha){
+        $usr = $this->busca_usr_email($email);
+        if(isset ($usr) && $usr -> senha==$senha){
+            return $usr;
+        }
+        return null;
 
     }
 }
