@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>   
+   <meta charset="UTF-8">
+   <title>Exemplo especificidade de seletores</title>
+   <style>
+      /*regra 1*/ li{color:red;}                             /* Especificidade: 1 */
+      /*regra 2*/ .churras{color:green;}                     /* Especificidade: 10 */
+      /*regra 3*/ .fruta{color:gray}                         /* Especificidade: 10 */
+      /*regra 4*/ li+li.churras{color: black;}               /* Especificidade: 11 */
+      /*regra 5*/ .churras[draggable="true"]{color: magenta;}/* Especificidade: 20 */
+      /*regra 6*/ #lip1,#lip2,#lip3{color:blue}              /* Especificidade: 100 */
+      /*regra 7*/ #lip3.fruta{color:orange}                  /* Especificidade: 110 */
+      /*regra 8*/ ol>li.churras#lip5{color:purple}           /* Especificidade: 111 */
+   </style>
+</head>
+<body>   
+   <ol>
+      <h1>Exemplo especificidade de seletores</h1>
+
+      <p>regra 1: li{color:red;}                              <br>
+      regra 2:  .churras{color:green;}                       <br>
+      regra 3:  .fruta{color:gray}                           <br>
+      regra 4:  li+li.churras{color: black;}                 <br>
+      regra 5:  .churras[draggable="true"]{color: magenta;}  <br>
+      regra 6:  #lip1,#lip2,#lip3{color:blue}               <br>
+      regra 7:  #lip3.fruta{color:orange}                    <br>
+      regra 8:  ol>li.churras#lip5{color:purple}             <br></p>
+
+      <h1>Funcionamento das especificidades</h1>
+      <p>para entender as especificidades é usado a seguinte forma<br></p>
+      <p>(ID, classe, tipo) ou como calculo (0,0,0) <br> </p>
+      <p>O (ID) Refere-se aos seletores de ID, como #id. <br></p>
+      <p>A (Classe) Refere-se aos seletores de classe, pseudo-classes, e atributos, como .classe, :hover, [type="text"].<br></p>
+      <p>O (Tipo) Refere-se aos seletores de tipo/elemento (tags HTML), como div, p, li.<br></p>
+      <p>Para caucular é tipo assim (pelo que eu entendi kkkkkkk)  <br></p>
+      <p> (ID, classe, tipo) = (100,10,1) vai de unidade dezena centena, eles tem suas prioridade mais assim é mais facil de entender (prefiro numeros)<br></p>
+
+   <!--item 1--> <li id="lip0">Abacaxi.  só o li está sendo usada no style, logo a cor vai ser vermelha </li> 
+   <!--item 2--> <li           class="fruta">Melão. A classe fruta vale mais que li  logo a cor vai ser cinza</li></li>
+   <!--item 3--> <li id="lip2" class="fruta">Pera. A cor é azul pois o ID prevalece entre classe e tipo </li> 
+   <!--item 4--> <li id="lip3" class="fruta">Uva. A cor é amarelo pois prevale a regra 7, ele está especificando ainda mais no style (#lip3.fruta) como se fosse  (1,1,0) = 110</li> 
+   <!--item 5--> <li id="lip4" class="fruta">Maçã. A cor é cinza pois no sltyle não está sendo usado o ID (id="lip4") logo a classe prevalece sobre o tipo  </li>
+   <!--item 6--> <li           class="churras">Carne. A cor é preta pois ele esta especificando um pouco mais que regra 2 exemplo: (li+li.churras), um adendo não é que ele está usando li + li que vamos calcular 1 + 1, vai apenas prevalecer 1 pois o sinal de + apenas está conectando os dois (sim, não faz sentido, mas já sabe né a vida não faz sentido kkkkkkkk), agora pega (li.churras) (0,10,1) = 11  </li>
+   <!--item 7--> <li           class="churras">Linguiça. A mesma coisa que a de cima</li>
+   <!--item 8--> <li id="lip7" class="churras" draggable="true">Pão de alho. A cor é magnata pois são duas classes juntas para uma maior especificidade, não é como li+li, é a junção de class e atributo, e o ID não está sendo usado </li> 
+   </ol>   
+</body>
+</html>
