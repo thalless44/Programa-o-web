@@ -25,15 +25,17 @@ switch($rota){
         break;
 
     case 'autenticacao':
-        $aut = new AutenticacaoController();
+        $aut = new AuthController();
         $aut->login();
         break;
     
     case 'cadastro':
         $cadastro = new CadastroController();
         $cadastro ->cadastro();
-            header("Location:cadastroUsuario.php");
-            break;
+        header("Location:cadastroUsuario.php");
+        break;
+
+        
 
     case 'home':
         header("Location:home.php");

@@ -19,8 +19,6 @@ if(!isset($_SESSION['usuario'])){
         <th> NOME </th>
         <th> EMAIL </th>
     </tr>
-
-
 <?php
 
 $dao = new UsuarioDAO();

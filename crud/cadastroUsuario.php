@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2> Cadstro de Usuário</h2>
+<h2> Cadsstro de Usuário</h2>
     
     <form action="rota.php?rota=cadastro" method="post">
         <label for="nome" > nome </label>
