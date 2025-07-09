@@ -30,11 +30,12 @@ switch($rota){
         break;
     
     case 'cadastro':
+        $cadastro = new CadastroController();
         if (!empty($_POST)) {
-            $cadastro = new CadastroController();
-            $cadastro->cadastro();
             header("Location:login.php");
-        }  header("Location:cadastroUsuario.php");
+            break;
+        }  $cadastro->cadastro();
+        header("Location:cadastroUsuario.php");
         break;
 
         
