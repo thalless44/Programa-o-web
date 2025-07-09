@@ -19,6 +19,10 @@
 
 
 
+    </form>
+    <form action="rota.php?rota=cadastro" method="post">
+
+        <input type="submit" value="cadastro">
     </form> 
 
 </body>
