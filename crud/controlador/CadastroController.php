@@ -16,8 +16,6 @@ include_once __DIR__.'./../modelo/UsuarioDAO.php';
         $senha = $_POST['senha'];
         $usuario = new Usuario($nome, $email, $senha);
         $usuario = $dao->inserir($usuario);
-
-   
     
     }
         else{

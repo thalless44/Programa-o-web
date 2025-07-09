@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<nav> <a href="rota.php?rota=logout"> Sair </a> <br> </nav>
+<nav> <a href="rota.php?rota=logout"> Sair </a> <br> <a href="rota.php?rota=cadastro"> CADASTRAR USUÁRIO </a> </nav>
+
 
     <h2>Lista de Usuários</h2>
 

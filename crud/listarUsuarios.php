@@ -14,20 +14,23 @@ if(!isset($_SESSION['usuario'])){
 ?>
 
 <table>
-    <tr>
-        <th> ID </th>
-        <th> NOME </th>
-        <th> EMAIL </th>
-    </tr>
 <?php
 
 $dao = new UsuarioDAO();
 $lista = $dao->lista_todos();
 
 foreach($lista as $usuario){
-    echo $usuario->id;
-    echo $usuario->nome;
-    echo $usuario->email;
+    echo "<tr>";
+        echo "<th> ID </th>";
+        echo "<th> NOME </th>";
+        echo "<th> EMAIL </th>";
+        echo "</tr>";
+
+        echo "<tr>";
+        echo "<td>" . $usuario->id . "</td>";
+        echo "<td>" . $usuario->nome . "</td>";
+        echo "<td>" . $usuario->email . "</td>";
+        echo "</tr>";
 
 }
 
