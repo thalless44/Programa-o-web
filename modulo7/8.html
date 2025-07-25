@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>meudeus</title>
+  <style>
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100svh;
+      background-color: #f0f0f0;
+    }
+
+    .paleta {
+      display: flex;
+    }
+
+    .cor {
+      width: 120px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.4s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="paleta">
+    <div class="cor" id="c1">#05668D</div>
+    <div class="cor" id="c2">#427AA1</div>
+    <div class="cor" id="c3">#EBF2FA</div>
+    <div class="cor" id="c4">#679436</div>
+    <div class="cor" id="c5">#A5BE00</div>
+  </div>
+
+  <script>
+    
+    function sorteiaNumero() {
+      return Math.trunc(Math.random() * 256);
+    }
+
+    
+    function geraCorHEX() {
+      const r = sorteiaNumero();
+      const g = sorteiaNumero();
+      const b = sorteiaNumero();
+      return rgbParaHex(r, g, b);
+    }
+
+    
+    function rgbParaHex(r, g, b) {
+      return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+    }
+
+   
+    function toHex(value) {
+      const hex = value.toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    }
+
+   
+    function alteraCores() {
+      for (let i = 1; i <= 5; i++) {
+        const div = document.getElementById(`c${i}`);
+        const novaCor = geraCorHEX();
+        div.style.backgroundColor = novaCor;
+        div.style.color = "#000"; 
+        div.textContent = novaCor; 
+      }
+    }
+
+    
+    document.addEventListener("keydown", function (event) {
+      if (event.code === "Space") {
+
+        alteraCores();
+      }
+    });
+  </script>
+
+</body>
+</html>

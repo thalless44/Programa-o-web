@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>aaaaaaaaaaaaaaa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    input {
+      padding: 8px;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    #resultadoPalindromo {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Verificar se é Palíndromo</h1>
+
+  <input type="text" id="palavra" placeholder="Digite uma palavra">
+  <button onclick="verificarPalindromo()">Verificar</button>
+
+  <div id="resultadoPalindromo"></div>
+
+  <script>
+    function verificarPalindromo() {
+      const palavraOriginal = document.getElementById("palavra").value;
+      const resultado = document.getElementById("resultadoPalindromo");
+
+      if (!palavraOriginal) {
+        resultado.innerText = "Por favor, digite uma palavra.";
+        return;
+      }
+
+      const palavra = palavraOriginal
+        .toLowerCase()
+        .normalize("NFD")
+      const invertida = palavra.split("").reverse().join("");
+      if (palavra === invertida) {
+        resultado.innerText = `"${palavraOriginal}" é um palíndromo.`;
+      } else {
+        resultado.innerText = `"${palavraOriginal}" não é um palíndromo.`;
+      }
+    }
+  </script>
+
+</body>
+</html>

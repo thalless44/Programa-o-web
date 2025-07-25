@@ -19,8 +19,8 @@
         }
 
         fieldset {
-            background-color: rgb(188, 216, 138);
-            box-shadow: 10px 10px rgb(116, 146, 59);
+            background-color: rgb(215, 0, 0);
+            box-shadow: 10px 10px rgb(70, 6, 6);
             border-radius: 10%;
             border-width: 0px;
             padding: 20px;
@@ -62,7 +62,7 @@
 
     <p id="resultIMC"></p>
     <p id="classificacao"></p>
-    <img src="IMGS/perfil.jpg" id="imgPerfil" alt="Imagem do perfil">
+    <img src="/img_listaJS/perfil.jpg" id="imgPerfil" alt="Imagem do perfil">
 
     <script>
         let btn = document.getElementById("btnCalcular");
@@ -82,7 +82,6 @@
                 return;
             }
 
-            // Salvar dados
             localStorage.setItem("nome", nome);
             localStorage.setItem("peso", peso);
             localStorage.setItem("altura", altura);
@@ -90,8 +89,6 @@
             let imc = calcularIMC(peso, altura);
             let imcFixado = imc.toFixed(2);
             resultIMC.innerHTML = `${nome}, seu IMC é ${imcFixado}`;
-
-            // Classificação com if
             let classificacaoTexto = "";
             if (imc < 18.5) {
                 classificacaoTexto = "Abaixo do peso";
@@ -107,8 +104,7 @@
                 classificacaoTexto = "Obesidade grau 3 (mórbida)";
             }
             classificacao.innerHTML = `Classificação: ${classificacaoTexto}`;
-
-            // Imagem com if/else if
+            
             if (imc < 18.5) {
                 imgPerfil.src = "/img_listaJS/abaixopeso.png";
             } else if (imc < 25) {

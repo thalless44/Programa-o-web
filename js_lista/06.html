@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mudar Cor de Fundo</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.5s ease;
+    }
+  </style>
 </head>
 <body>
-    <button>cliclk aqui</button>
-    <script>
-        
-        let mybutton = document.querySelector("#button")
-        mybutton.addEventListener("click" , () => {
-        
-        let r =  Math.floor(Math.random()*255)
-        let g =  Math.floor(Math.random()*255)
-        let b =  Math.floor(Math.random()*255)
 
-        function sorteaCorFundo(){
-            cor = "rgb" (+sorteaCorFundo())
-        }
+  <button id="button">Clique aqui</button>
 
-        function sorteaNumero{
-            return Math.trunc(Math.random()*255)
-        }
-        
-        })
-    </script>
+  <script>
+    let mybutton = document.querySelector("#button");
+
+    mybutton.addEventListener("click", () => {
+      function sorteaNumero() {
+        return Math.floor(Math.random() * 256);
+      }
+
+      let r = sorteaNumero();
+      let g = sorteaNumero();
+      let b = sorteaNumero();
+
+      let cor = `rgb(${r}, ${g}, ${b})`;
+
+      document.body.style.backgroundColor = cor;
+
+      console.log("Cor aplicada:", cor);
+    });
+  </script>
+
 </body>
 </html>

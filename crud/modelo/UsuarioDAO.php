@@ -1,54 +1,55 @@
 <?php
+
 include_once __DIR__.'./Conexao.php';
 include_once __DIR__.'./Usuario.php';
 
 class UsuarioDAO{
-    private $pdo;
+
     public function __construct(){
-        $this -> pdo = Conexao::getConexao();
+        $this->pdo = Conexao::getConexao();
     }
-    public function insere(Usuario $usuario){
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES(?,?,?)";
-        $stmt = $this -> pdo -> prepare($sql);
-        //$stmt -> bindParamns(1,$usuario ->nome);
-        $stmt -> execute([$usuario -> nome, $usuario -> email, $usuario ->senha]);
 
+    public function inserir(Usuario $usuario){
+        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES(?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$usuario->nome, $usuario->email, $usuario->senha]);
     }
-    public function busca_usr_email($email){
+
+    public function buscar_usuario_email($email){
         $sql = "SELECT * FROM usuarios WHERE email = ?";
-        $stmt = $this -> pdo -> prepare($sql);
-        $stmt -> execute([$email]);
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$email]);
+        $registro = $stmt->fetch();
+        $usuario = new Usuario($registro["nome"], $registro["email"], $registro["senha"]);
+        $usuario->id=$registro["id"];
 
-        $registro = $stmt -> fetch();
-        $usr =new Usuario($registro["nome"], $registro["email"], $registro["senha"]);
-        $usr -> id=$registro["id"];
-
-       // echo var_dump($registro);
-
-        return $usr;
+        return $usuario;
     }
-    public function lista_todos(){
-        $sql = "SELECT * FROM usuarios " ;
-        $stmt = $this -> pdo -> prepare($sql);
-        $stmt -> execute();
-        $registros = $stmt -> fetchAll();
 
-        $usuarios = [];
+    public function lista_todos(){
+        $sql="SELECT * FROM usuarios;";
+        $stmt=$this->pdo->prepare($sql);
+        $stmt->execute();
+        $registros=$stmt->fetchAll();
+        $usuarios=[];
+
         foreach($registros as $registro){
-            $usr =new Usuario($registro["nome"], $registro["email"], $registro["senha"]);
-            $usr -> id=$registro["id"];
-            array_push($usuarios, $usr);
+            $usuario = new Usuario($registro["nome"], $registro["email"], $registro["senha"]);
+            $usuario->id=$registro["id"];
+            array_push($usuarios, $usuario);
         }
         return $usuarios;
-
     }
 
     public function autenticar($email, $senha){
-        $usr = $this->busca_usr_email($email);
-        if(isset ($usr) && $usr -> senha==$senha){
-            return $usr;
-        }
-        return null;
+        $usuario=$this->buscar_usuario_email($email);
 
+        if(isset($usuario) && $usuario->senha==$senha){
+                return $usuario;
+            }
+         else{
+                return null;
+            }
+        }
     }
-}
+?>
